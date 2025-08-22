@@ -2,6 +2,8 @@
 #include <string>
 #include "Player.h"
 
+class Player;
+
 class Monster
 {
 public:

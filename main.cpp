@@ -58,9 +58,27 @@ int main() {
 
     switch (battle_choice) 
     {
-    case 1:
+    case 1: // 싸운다
+        while (player->getHP() > 0 && monster->getHP() > 0) {
+            player->attack(monster);
+            if (monster->getHP() <= 0) {
+                cout << "플레이어 승리!" << endl;
+                break;
+            }
 
-    }
+            monster->attack(player);
+            if (player->getHP() <= 0) {
+                cout << "몬스터 승리!" << endl;
+                break;
+            }
+        }
+        break;
 
-    return 0;
+    case 2: // 도망친다
+        cout << "플레이어가 도망쳤습니다!" << endl;
+        break;
+
+    default:
+        cout << "잘못된 입력입니다." << endl;
+        break;
 }

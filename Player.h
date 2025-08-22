@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+class Monster;
+
 class Player {
 public:
     Player(string nickname);
