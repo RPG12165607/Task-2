@@ -59,7 +59,6 @@ int main() {
     switch (battle_choice) 
     {
     case 1:
-        attack(Monster * monster)
 
     }
 

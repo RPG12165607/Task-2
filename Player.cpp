@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Monster.h"
 #include <iostream>
 
 Player::Player(string nickname)
@@ -124,4 +125,30 @@ void Player::printPlayerStatus() {
     cout << "정확도: " << accuracy << endl;
     cout << "속도: " << speed << endl;
     cout << "------------------------------------" << endl;
+}
+
+void Player::attack(Monster* monster)
+{
+    int attack_damage = 0;
+    attack_damage = power - getDefence();
+
+    if (attack_damage <= 0)
+    {
+        cout << "1 데미지";
+        attack_damage = 1;
+    }
+
+    else
+    {
+        cout << attack_damage << " 데미지";
+    }
+
+    int newHP = getHP() - attack_damage;
+
+    bool AandD = setHP(newHP);
+
+    if (!AandD)
+    {
+        cout << "몬스터에게서 승리했습니다.";
+    }
 }
